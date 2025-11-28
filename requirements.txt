@@ -7,7 +7,6 @@ pandas
 
 # Machine Learning
 scikit-learn
-xgboost
 
 # Saving/loading models
 joblib
