@@ -3,6 +3,7 @@ import pickle
 import pandas as pd
 import numpy as np
 import os
+import requests
 
 st.set_page_config(page_title="Price Predictor")
 
@@ -10,13 +11,16 @@ with open('datasets/df.pkl','rb') as file:
     df = pickle.load(file)
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))  # go to repo root
-file_path = os.path.join(BASE_DIR, "datasets", "pipeline.pkl")
+url = "https://github.com/ManikaSaini01/Gurugram-Real-estate/raw/main/datasets/pipeline.pkl"
+local_path = "pipeline.pkl"
 
-with open(file_path, "rb") as f:
+# Download only if not present
+if not os.path.exists(local_path):
+    with open(local_path, "wb") as f:
+        f.write(requests.get(url).content)
+
+with open(local_path, "rb") as f:
     pipeline = pickle.load(f)
-
-
 st.header('Enter your inputs')
 
 # property_type
