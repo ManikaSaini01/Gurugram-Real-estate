@@ -2,14 +2,19 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np
+import os
 
 st.set_page_config(page_title="Price Predictor")
 
 with open('datasets/df.pkl','rb') as file:
     df = pickle.load(file)
 
-with open('datasets/pipeline.pkl','rb') as file:
-    pipeline = pickle.load(file)
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))  # go to project root
+file_path = os.path.join(BASE_DIR, "datasets", "pipeline.pkl")
+
+with open(file_path, "rb") as f:
+    pipeline = pickle.load(f)
 
 
 st.header('Enter your inputs')
