@@ -1,13 +1,7 @@
-# Streamlit UI
-streamlit
-
-# Data handling
+scikit-learn==1.6.1
 numpy
 pandas
-
-# Machine Learning
-scikit-learn
-
+streamlit
 # Saving/loading models
 joblib
 
