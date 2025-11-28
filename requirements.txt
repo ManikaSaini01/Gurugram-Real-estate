@@ -1,7 +1,20 @@
-pandas
-numpy
-seaborn
-matplotlib
-scikit-learn
-requests
+# Streamlit UI
 streamlit
+
+# Data handling
+numpy
+pandas
+
+# Machine Learning
+scikit-learn
+xgboost
+
+# Saving/loading models
+joblib
+
+# HTTP requests (for downloading model in Streamlit)
+requests
+
+# Visualization
+matplotlib
+seaborn
