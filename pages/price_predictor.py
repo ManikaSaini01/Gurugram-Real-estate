@@ -10,7 +10,7 @@ with open('datasets/df.pkl','rb') as file:
     df = pickle.load(file)
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))  # go to project root
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))  # go to repo root
 file_path = os.path.join(BASE_DIR, "datasets", "pipeline.pkl")
 
 with open(file_path, "rb") as f:
