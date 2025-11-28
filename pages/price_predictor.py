@@ -11,19 +11,9 @@ with open('datasets/df.pkl','rb') as file:
     df = pickle.load(file)
 
 
-url = "https://media.githubusercontent.com/media/ManikaSaini01/Gurugram-Real-estate/main/datasets/pipeline.pkl"
-local_path = "pipeline.pkl"
+with open('datasets/pipeline.pkl','rb') as file:
+    pipeline = pickle.load(file)
 
-# Download only if not already downloaded
-if not os.path.exists(local_path):
-    with st.spinner("Downloading model... Please wait (~140 MB)"):
-        r = requests.get(url)
-        with open(local_path, "wb") as f:
-            f.write(r.content)
-
-# Load pickle
-with open(local_path, "rb") as f:
-    pipeline = pickle.load(f)
 
 
 st.header('Enter your inputs')
